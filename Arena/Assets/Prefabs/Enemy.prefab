@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6318848721595497014}
+  - component: {fileID: 7333678219871263849}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -34,6 +35,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7333678219871263849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371425844702304063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4549c3973e9d4184d8a8dfb893770a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953939636867090954
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +59,7 @@ GameObject:
   - component: {fileID: 953939636867090957}
   - component: {fileID: 953939636867090956}
   - component: {fileID: 953939636867090955}
+  - component: {fileID: 2064059344235651384}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -129,6 +143,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2064059344235651384
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953939636867090954}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!1001 &2928159363463184252
 PrefabInstance:
   m_ObjectHideFlags: 0
