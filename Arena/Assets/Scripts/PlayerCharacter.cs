@@ -6,6 +6,13 @@ public class PlayerCharacter : Character
 {
     public GameObject[] playerWeapons;
 
+    int hitPoints { get; set; }
+
+    private void Start()
+    {
+        hitPoints = 3;
+    }
+
     private void Update()
     {
         Movement();
@@ -15,15 +22,36 @@ public class PlayerCharacter : Character
             Attack();
         }
 
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Defend();
+        }
+
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
             playerWeapons[0].SetActive(false);
         }
+
+        if(Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            playerWeapons[1].SetActive(false);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        CalculateHP();
     }
 
     public override void CalculateHP()
     {
-        throw new System.NotImplementedException();
+        if (hitPoints != 0)
+        {
+            hitPoints -= 1;
+            return;
+        }
+
+        GameObject.Destroy(this);
     }
 
     public override void Movement()
@@ -43,6 +71,6 @@ public class PlayerCharacter : Character
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.back * Time.deltaTime * 10);
-        }
+        }        
     }
 }
