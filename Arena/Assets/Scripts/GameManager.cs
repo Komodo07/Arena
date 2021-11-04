@@ -5,8 +5,10 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
+    public GameObject[] weapons;
+    public GameObject enemy;
     public string playerName;
 
     private void Awake()

@@ -1294,6 +1294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b022eafd122eee4abd4585a1b596768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 8109180720842841409, guid: 798a4f7d5dde05b44a495694471c940f, type: 3}
+  - {fileID: 8728449663301723369, guid: 8a7ed7b33c8fbfa4aa471d912850fdfd, type: 3}
+  - {fileID: 7638228297752023036, guid: 3da000eea09f0ee47801be2fa8e982e4, type: 3}
+  enemy: {fileID: 371425844702304063, guid: 4cf45e23e38e0ea4ab623ff347d731fe, type: 3}
   playerName: 
 --- !u!4 &1709016914
 Transform:

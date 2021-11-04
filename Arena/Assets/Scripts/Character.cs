@@ -6,7 +6,8 @@ public abstract class Character : MonoBehaviour
 {
     public virtual void Attack()
     {
-
+        PlayerCharacter player = FindObjectOfType<PlayerCharacter>();
+        player.playerWeapons[0].SetActive(true);
     }
 
     public virtual void Defend()
