@@ -13,7 +13,7 @@ public class ArenaUIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerName.text = GameManager.Instance.playerName;
+        playerName.text = GameManager.Instance.PlayerName;
         GameManager.Instance.SpawnEnemies();
     }
 

@@ -7,6 +7,14 @@ public class EnemyCharacter : Character
     private void Awake()
     {
         HitPoints = 1;
+        isDead = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameManager.Instance.EnemyCount -= 1;
+        isDead = true;
+        Destroy(gameObject);
     }
 
     public override void CalculateHP()

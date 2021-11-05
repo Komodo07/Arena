@@ -6,7 +6,7 @@ public abstract class Character : MonoBehaviour
 {
     [SerializeField]
     private int hitPoints;
-
+    public bool isDead;
     public int HitPoints
     {
         get { return hitPoints; }

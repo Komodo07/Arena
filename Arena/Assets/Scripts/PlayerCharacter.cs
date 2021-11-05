@@ -9,6 +9,7 @@ public class PlayerCharacter : Character
     private void Start()
     {
         HitPoints = 3;
+        isDead = false;
     }
 
     private void Update()

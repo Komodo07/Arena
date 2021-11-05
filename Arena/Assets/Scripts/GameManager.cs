@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] weapons;
     public GameObject enemy;
-    public string playerName;
+    private string playerName;
+    public string PlayerName
+    {
+        get { return playerName; }
+        set { playerName = value; }
+    }
 
     private int waveCount;
     public int WaveCount

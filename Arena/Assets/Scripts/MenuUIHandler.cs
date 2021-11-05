@@ -16,7 +16,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartNew()
     {
-        GameManager.Instance.playerName = nameInput.GetComponent<TMP_InputField>().text;
+        GameManager.Instance.PlayerName = nameInput.GetComponent<TMP_InputField>().text;
 
         SceneManager.LoadScene(1);
     }
