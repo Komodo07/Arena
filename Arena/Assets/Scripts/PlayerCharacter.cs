@@ -6,11 +6,9 @@ public class PlayerCharacter : Character
 {
     public GameObject[] playerWeapons;
 
-    int hitPoints { get; set; }
-
     private void Start()
     {
-        hitPoints = 3;
+        HitPoints = 3;
     }
 
     private void Update()
@@ -38,16 +36,13 @@ public class PlayerCharacter : Character
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        CalculateHP();
-    }
+    
 
     public override void CalculateHP()
     {
-        if (hitPoints != 0)
+        if (HitPoints != 0)
         {
-            hitPoints -= 1;
+            HitPoints -= 1;
             return;
         }
 

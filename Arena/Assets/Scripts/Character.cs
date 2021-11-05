@@ -4,6 +4,15 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    [SerializeField]
+    private int hitPoints;
+
+    public int HitPoints
+    {
+        get { return hitPoints; }
+        set { hitPoints = value; }
+    }
+
     public virtual void Attack()
     {
         PlayerCharacter player = FindObjectOfType<PlayerCharacter>();
