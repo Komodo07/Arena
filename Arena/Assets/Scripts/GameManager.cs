@@ -15,22 +15,22 @@ public class GameManager : MonoBehaviour
         get { return playerName; }
         set { playerName = value; }
     }
-
-    private int maxWaves;
+    
+    private int maxWaves; //Feature can be added later asking player how many waves they want to fight.
     public int MaxWaves
     {
         get { return maxWaves; }
         set { maxWaves = value; }
     }
-    private int waveCount;
+
+    private int waveCount; //Keeps track of current wave of enemies
     public int WaveCount
     {
         get { return waveCount; }
         set { waveCount = value; }
     }
 
-    private int enemyCount;
-
+    private int enemyCount; //Keeps track of enemies killed in the current wave
     public int EnemyCount
     {
         get { return enemyCount; }
@@ -50,18 +50,18 @@ public class GameManager : MonoBehaviour
         MaxWaves = 10;
     }
 
-    public void SpawnEnemies()
+    public void SpawnEnemies() //Spawns the designated number of enemies and increases the WaveCount
     {
         WaveCount++;
-        for (enemyCount = 0; enemyCount < 10; enemyCount++)
+        for (EnemyCount = 0; EnemyCount < 10; EnemyCount++)
         {
             Instantiate(enemy, new Vector3(Random.Range(-17, 17), 0, Random.Range(43, 77)), transform.rotation);
         }
     }
 
-    public void SpawnWave()
+    public void SpawnWave() //Determines if all enemies in this wave are dead and spawns the next wave
     {
-        if (EnemyCount == 0 && WaveCount != maxWaves)
+        if (EnemyCount == 0 && WaveCount != MaxWaves)
         {
             SpawnEnemies();
         }
