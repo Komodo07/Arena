@@ -66,4 +66,11 @@ public class GameManager : MonoBehaviour
             SpawnEnemies();
         }
     }
+
+    public void DropWeapon(float x, float z) //Drops a random weapon at enemy death location
+    {
+        int index = Random.Range(0, 3);
+        float y = weapons[index].transform.position.y;
+        Instantiate(weapons[index], new Vector3(x,y,z), weapons[index].transform.rotation);
+    }
 }

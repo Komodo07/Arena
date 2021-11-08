@@ -14,7 +14,9 @@ public class EnemyCharacter : Character
     {
         if(other.CompareTag("Player"))
         {
+            int index = Random.Range(0, 3);
             GameManager.Instance.EnemyCount -= 1;
+            GameManager.Instance.DropWeapon(transform.position.x, transform.position.z);
             Destroy(gameObject);
         }        
     }
