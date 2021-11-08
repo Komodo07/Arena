@@ -21,6 +21,8 @@ public class ArenaUIHandler : MonoBehaviour
     void Update()
     {
         DisplayRemainingEnemies();
+        GameManager.Instance.SpawnWave();
+        waveCount.text = GameManager.Instance.WaveCount.ToString();
     }
 
     void DisplayRemainingEnemies()

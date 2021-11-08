@@ -35,9 +35,7 @@ public class PlayerCharacter : Character
         {
             playerWeapons[1].SetActive(false);
         }
-    }
-
-    
+    }    
 
     public override void CalculateHP()
     {

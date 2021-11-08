@@ -44,10 +44,19 @@ public class GameManager : MonoBehaviour
     }
 
     public void SpawnEnemies()
-    {        
+    {
+        WaveCount++;
         for (enemyCount = 0; enemyCount < 10; enemyCount++)
         {
             Instantiate(enemy, new Vector3(Random.Range(-17, 17), 0, Random.Range(43, 77)), transform.rotation);
+        }
+    }
+
+    public void SpawnWave()
+    {
+        if (EnemyCount == 0 && WaveCount != 10)
+        {
+            SpawnEnemies();
         }
     }
 }

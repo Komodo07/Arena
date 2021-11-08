@@ -12,9 +12,11 @@ public class EnemyCharacter : Character
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.EnemyCount -= 1;
-        isDead = true;
-        Destroy(gameObject);
+        if(other.CompareTag("Player"))
+        {
+            GameManager.Instance.EnemyCount -= 1;
+            Destroy(gameObject);
+        }        
     }
 
     public override void CalculateHP()
