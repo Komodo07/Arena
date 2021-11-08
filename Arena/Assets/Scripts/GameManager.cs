@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour
         set { playerName = value; }
     }
 
+    private int maxWaves;
+    public int MaxWaves
+    {
+        get { return maxWaves; }
+        set { maxWaves = value; }
+    }
     private int waveCount;
     public int WaveCount
     {
@@ -40,7 +46,8 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);        
+        DontDestroyOnLoad(gameObject);
+        MaxWaves = 10;
     }
 
     public void SpawnEnemies()
@@ -54,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnWave()
     {
-        if (EnemyCount == 0 && WaveCount != 10)
+        if (EnemyCount == 0 && WaveCount != maxWaves)
         {
             SpawnEnemies();
         }

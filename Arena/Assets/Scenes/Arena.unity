@@ -174,7 +174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wave: 1'
+  m_Text: 'Wave: 0/10'
 --- !u!222 &19926269
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 90}
+  m_SizeDelta: {x: 450, y: 90}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &32727022
 GameObject:
