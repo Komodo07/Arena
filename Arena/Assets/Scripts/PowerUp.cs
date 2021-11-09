@@ -10,4 +10,11 @@ public class PowerUp : MonoBehaviour
 
         powerUpRb.AddRelativeTorque(Vector3.forward, ForceMode.Force);
     }
+
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
+    */
 }
