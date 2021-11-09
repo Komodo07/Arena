@@ -34,12 +34,12 @@ public class ArenaUIHandler : MonoBehaviour
         GameManager.Instance.SpawnWave();
     }
 
-    void DisplayRemainingEnemies()
+    void DisplayRemainingEnemies() // ABSTRACTION
     {
         enemiesKilled.text = "Enemies Remaining: " + GameManager.Instance.EnemyCount.ToString();
     }
 
-    void DisplayRemainingWaves()
+    void DisplayRemainingWaves() // ABSTRACTION
     {
         waveCount.text = "Wave: " + GameManager.Instance.WaveCount.ToString() + "/" + GameManager.Instance.MaxWaves.ToString();
     }    
