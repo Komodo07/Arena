@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] weapons;
     public GameObject enemy;
+    
+
     private string playerName;
     public string PlayerName
     {
@@ -47,7 +50,7 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        MaxWaves = 10;
+        MaxWaves = 3;
     }
 
     public void SpawnEnemies() //Spawns the designated number of enemies and increases the WaveCount
@@ -72,5 +75,14 @@ public class GameManager : MonoBehaviour
         int index = Random.Range(0, 3);
         float y = weapons[index].transform.position.y;
         Instantiate(weapons[index], new Vector3(x,y,z), weapons[index].transform.rotation);
+    }
+
+    public void GameOver()
+    {
+        if (WaveCount == MaxWaves && EnemyCount == 0)
+        {
+            ArenaUIHandler.AUIHandler.gameOverPanel.SetActive(true);
+            //PlayerCharacter.FindObjectOfType<PlayerCharacter>().IsGameOver = true;
+        }
     }
 }
