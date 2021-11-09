@@ -19,14 +19,19 @@ public class EnemyCharacter : Character
             GameManager.Instance.DropWeapon(transform.position.x, transform.position.z);
             Destroy(gameObject);
         }        
-    }
+    }    
 
-    public override void CalculateHP()
+    public override void Movement()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void Movement()
+    public override void Attack()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Defend()
     {
         throw new System.NotImplementedException();
     }
