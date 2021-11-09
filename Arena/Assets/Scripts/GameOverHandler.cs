@@ -10,9 +10,8 @@ using UnityEditor;
 public class GameOverHandler : MonoBehaviour
 {
     public void Restart()
-    {
-        ArenaUIHandler.AUIHandler.gameOverPanel.SetActive(false);
-        GameManager.Instance.WaveCount = 0;
+    {        
+        GameManager.Instance.WaveCount = 0;        
         SceneManager.LoadScene(1);
         //PlayerCharacter.FindObjectOfType<PlayerCharacter>().IsGameOver = false;
     }
