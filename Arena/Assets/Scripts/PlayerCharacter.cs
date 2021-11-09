@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacter : Character
+public class PlayerCharacter : Character // INHERITANCE
 {
     public static PlayerCharacter Player { get; private set; }
 
     public GameObject[] playerWeapons;
 
     private bool isGameOver;
-    public bool IsGameOver
+    public bool IsGameOver // ENCAPSULATION
     {
         get { return isGameOver; }
         set { isGameOver = value; }
@@ -34,7 +34,7 @@ public class PlayerCharacter : Character
         HitPoints += extraHP;
     }
 
-    public override void Movement() //Basic WASD movement
+    public override void Movement() // POLYMORPHISM
     {
         if(!isGameOver)
         {
@@ -57,7 +57,7 @@ public class PlayerCharacter : Character
         }
     }
 
-    public override void Attack() //M0 triggers sword on/off
+    public override void Attack() // POLYMORPHISM
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -69,7 +69,7 @@ public class PlayerCharacter : Character
         }
     }
 
-    public override void Defend() //M1 triggers shield on/off
+    public override void Defend() // POLYMORPHISM
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
