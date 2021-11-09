@@ -6,10 +6,17 @@ public class PlayerCharacter : Character
 {
     public GameObject[] playerWeapons;
 
+    private bool isGameOver;
+    public bool IsGameOver
+    {
+        get { return isGameOver; }
+        set { isGameOver = value; }
+    }
+
     private void Start()
     {
         HitPoints = 3;
-        isDead = false;
+        isGameOver = false;
     }
 
     private void Update()
@@ -50,21 +57,24 @@ public class PlayerCharacter : Character
 
     public override void Movement()
     {
-        if(Input.GetKey(KeyCode.W))
+        if(!isGameOver)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime *10);
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime * 10);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * 10);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * 10);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(Vector3.back * Time.deltaTime * 10);
+            }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * 10);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * Time.deltaTime * 10);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.back * Time.deltaTime * 10);
-        }        
     }
 }
