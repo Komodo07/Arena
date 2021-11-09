@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         {
             SpawnEnemies();
             WaveCount++;
+            PlayerCharacter.Player.CalculateHP(1);
         }
     }
 
@@ -81,7 +82,7 @@ public class GameManager : MonoBehaviour
         if (WaveCount == MaxWaves && EnemyCount == 0)
         {
             ArenaUIHandler.AUIHandler.gameOverPanel.SetActive(true);
-            //PlayerCharacter.FindObjectOfType<PlayerCharacter>().IsGameOver = true;
+            PlayerCharacter.Player.IsGameOver = true;
         }
     }
 }

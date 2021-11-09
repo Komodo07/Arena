@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCharacter : Character
 {
+    public static PlayerCharacter Player { get; private set; }
+
     public GameObject[] playerWeapons;
 
     private bool isGameOver;
@@ -15,6 +17,7 @@ public class PlayerCharacter : Character
 
     private void Start()
     {
+        Player = this;
         HitPoints = 3;
         isGameOver = false;
     }
@@ -22,40 +25,16 @@ public class PlayerCharacter : Character
     private void Update()
     {
         Movement();
-
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Attack();
-        }
-
-        if(Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            Defend();
-        }
-
-        if(Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            playerWeapons[0].SetActive(false);
-        }
-
-        if(Input.GetKeyUp(KeyCode.Mouse1))
-        {
-            playerWeapons[1].SetActive(false);
-        }
+        Attack();
+        Defend();        
     }    
 
-    public override void CalculateHP()
+    public void CalculateHP(int extraHP)
     {
-        if (HitPoints != 0)
-        {
-            HitPoints -= 1;
-            return;
-        }
-
-        GameObject.Destroy(this);
+        HitPoints += extraHP;
     }
 
-    public override void Movement()
+    public override void Movement() //Basic WASD movement
     {
         if(!isGameOver)
         {
@@ -75,6 +54,30 @@ public class PlayerCharacter : Character
             {
                 transform.Translate(Vector3.back * Time.deltaTime * 10);
             }
+        }
+    }
+
+    public override void Attack() //M0 triggers sword on/off
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            playerWeapons[0].SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            playerWeapons[0].SetActive(false);
+        }
+    }
+
+    public override void Defend() //M1 triggers shield on/off
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            playerWeapons[1].SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            playerWeapons[1].SetActive(false);
         }
     }
 }

@@ -13,19 +13,9 @@ public abstract class Character : MonoBehaviour
         set { hitPoints = value; }
     }
 
-    public virtual void Attack()
-    {
-        PlayerCharacter player = FindObjectOfType<PlayerCharacter>();
-        player.playerWeapons[0].SetActive(true);
-    }
+    public abstract void Attack();
 
-    public virtual void Defend()
-    {
-        PlayerCharacter player = FindObjectOfType<PlayerCharacter>();
-        player.playerWeapons[1].SetActive(true);
-    }
-
-    public abstract void CalculateHP();
+    public abstract void Defend();
 
     public abstract void Movement();
 }
